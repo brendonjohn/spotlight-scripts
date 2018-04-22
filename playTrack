@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+osascript -e 'tell application "Spotify" to play'
+
+echo -n -e "\033]0;playTrack\007"
+
+osascript -e 'tell application "Terminal" to close (every window whose name contains "playTrack")' &
+
+exit 0

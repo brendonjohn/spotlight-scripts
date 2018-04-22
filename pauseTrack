@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+osascript -e 'tell application "Spotify" to pause track'
+
+echo -n -e "\033]0;pauseTrack\007"
+
+osascript -e 'tell application "Terminal" to close (every window whose name contains "pauseTrack")' &
+
+exit 0
