@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+osascript -e 'tell application "Spotify" to set player position to 0'
+osascript -e 'tell application "Spotify" to previous track'
+
+echo -n -e "\033]0;previousTrack\007"
+
+osascript -e 'tell application "Terminal" to close (every window whose name contains "previousTrack")' &
+
+exit 0
